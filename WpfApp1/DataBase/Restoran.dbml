@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Restoran" Class="RestoranDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Restoran;Integrated Security=True" SettingsObjectName="WpfApp1.Properties.Settings" SettingsPropertyName="RestoranConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Adres" Member="Adres">
+    <Type Name="Adres">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Adres" Member="Adres1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Adres_Klient" Member="Klient" ThisKey="id" OtherKey="Adres" Type="Klient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zacaz_bluda" Member="Zacaz_bluda">
+    <Type Name="Zacaz_bluda">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_bluda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_zakaz" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Bluda_Zacaz_bluda" Member="Bluda" ThisKey="id_bluda" OtherKey="id" Type="Bluda" IsForeignKey="true" />
+      <Association Name="Zacaz_Zacaz_bluda" Member="Zacaz" ThisKey="id_zakaz" OtherKey="id" Type="Zacaz" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bluda" Member="Bluda">
+    <Type Name="Bluda">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nazv" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cena" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="discont" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Bluda_Zacaz_bluda" Member="Zacaz_bluda" ThisKey="id" OtherKey="id_bluda" Type="Zacaz_bluda" />
+      <Association Name="Bluda_Kat_bluda" Member="Kat_bluda" ThisKey="id" OtherKey="id_bluda" Type="Kat_bluda" />
+      <Association Name="Bluda_Sostav" Member="Sostav" ThisKey="id" OtherKey="id_bluda" Type="Sostav" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kat_bluda" Member="Kat_bluda">
+    <Type Name="Kat_bluda">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_kat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_bluda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Bluda_Kat_bluda" Member="Bluda" ThisKey="id_bluda" OtherKey="id" Type="Bluda" IsForeignKey="true" />
+      <Association Name="Kategoria_Kat_bluda" Member="Kategoria" ThisKey="id_kat" OtherKey="id" Type="Kategoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kategoria" Member="Kategoria">
+    <Type Name="Kategoria">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[nazv kat]" Member="nazv_kat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Kategoria_Kat_bluda" Member="Kat_bluda" ThisKey="id" OtherKey="id_kat" Type="Kat_bluda" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Klient" Member="Klient">
+    <Type Name="Klient">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Last Name]" Member="Last_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Otchestvo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Klient_Zacaz" Member="Zacaz" ThisKey="Id" OtherKey="id_klient" Type="Zacaz" />
+      <Association Name="Adres_Klient" Member="Adres1" ThisKey="Adres" OtherKey="id" Type="Adres" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Prodykt" Member="Prodykt">
+    <Type Name="Prodykt">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nazv" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Prodykt_Sostav" Member="Sostav" ThisKey="id" OtherKey="id_Prodykt" Type="Sostav" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sostav" Member="Sostav">
+    <Type Name="Sostav">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_bluda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_Prodykt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ves" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Bluda_Sostav" Member="Bluda" ThisKey="id_bluda" OtherKey="id" Type="Bluda" IsForeignKey="true" />
+      <Association Name="Prodykt_Sostav" Member="Prodykt" ThisKey="id_Prodykt" OtherKey="id" Type="Prodykt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zacaz" Member="Zacaz">
+    <Type Name="Zacaz">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[id zacaz bluda]" Member="id_zacaz_bluda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[id klient]" Member="id_klient" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="data" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Zacaz_Zacaz_bluda" Member="Zacaz_bluda" ThisKey="id" OtherKey="id_zakaz" Type="Zacaz_bluda" />
+      <Association Name="Klient_Zacaz" Member="Klient" ThisKey="id_klient" OtherKey="Id" Type="Klient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Check_users" Method="Check_users" IsComposable="true">
+    <Parameter Name="log" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pas" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Add_User" Method="Add_User">
+    <Parameter Name="adr" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="fam" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="nam" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="otc" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tel" Type="System.String" DbType="Char(11)" />
+    <Parameter Name="log" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="pas" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 17.375" name="Restoran">
+  <DataContextMoniker Name="/RestoranDataContext" />
+  <nestedChildShapes>
+    <classShape Id="98e7e124-51cb-4ac5-8594-674416477516" absoluteBounds="1.75, 12.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/RestoranDataContext/Adres" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a49366b8-5076-4446-9dbe-72144936cef4" absoluteBounds="1.7650000000000001, 13.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="933b05c6-187d-4796-81cf-786462b101f6" absoluteBounds="3.5, 3.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/RestoranDataContext/Zacaz_bluda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f1b04c5-d1c0-481b-ae79-d7d76baa9b37" absoluteBounds="3.515, 4.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89b46395-8758-40c2-b382-32a872e6aa8e" absoluteBounds="0.75, 3.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RestoranDataContext/Bluda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1adec8e-283a-4a8b-abc3-524078512f3d" absoluteBounds="0.765, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d444cf6-a9af-438d-a153-61b95b68876f" absoluteBounds="3.5, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/RestoranDataContext/Kat_bluda" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f4e33f9-6e58-4208-867f-d512746b9e19" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="221305e4-fb7e-46e7-a280-d4e56844cfe4" absoluteBounds="0.75, 1.375, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/RestoranDataContext/Kategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7e5eab6-2d55-4e8a-b4dd-65ee4f32c6d7" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="952ffc98-3aa0-4607-a03a-7d53019f8287" absoluteBounds="1.5, 9.125, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/RestoranDataContext/Klient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26f885f9-a98f-43eb-9161-201d600d5bda" absoluteBounds="1.5150000000000001, 9.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="60cc41f2-92a0-42a5-8504-e0c5825a20f7" absoluteBounds="0.75, 15.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/RestoranDataContext/Prodykt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf72b4f3-658a-4ad3-bd4e-84b961897db5" absoluteBounds="0.765, 16.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45dc4e1b-b6e6-4926-9f6d-926791b2f6f7" absoluteBounds="3.5, 6.625, 2, 1.5785953776041657">
+      <DataClassMoniker Name="/RestoranDataContext/Sostav" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3fe9240-06e9-4201-a30e-55d05e6b8d2d" absoluteBounds="3.515, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e304e7b0-fe87-4a3d-b677-16bbdbc63c02" absoluteBounds="0.75, 6.625, 2, 1.5785953776041657">
+      <DataClassMoniker Name="/RestoranDataContext/Zacaz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a3e33bd-c9f0-4eda-a6cb-93962763dc99" absoluteBounds="0.765, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.44314697265625); (3.5 : 4.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Bluda/Bluda_Zacaz_bluda" />
+      <nodes>
+        <classShapeMoniker Id="89b46395-8758-40c2-b382-32a872e6aa8e" />
+        <classShapeMoniker Id="933b05c6-187d-4796-81cf-786462b101f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.5); (3.125 : 3.125); (3.125 : 1.44314697265625); (3.5 : 1.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Bluda/Bluda_Kat_bluda" />
+      <nodes>
+        <classShapeMoniker Id="89b46395-8758-40c2-b382-32a872e6aa8e" />
+        <classShapeMoniker Id="2d444cf6-a9af-438d-a153-61b95b68876f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.85222045898437); (3.5 : 1.85222045898437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Kategoria/Kategoria_Kat_bluda" />
+      <nodes>
+        <classShapeMoniker Id="221305e4-fb7e-46e7-a280-d4e56844cfe4" />
+        <classShapeMoniker Id="2d444cf6-a9af-438d-a153-61b95b68876f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 12.875); (2.625 : 11.6651025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Adres/Adres_Klient" />
+      <nodes>
+        <classShapeMoniker Id="98e7e124-51cb-4ac5-8594-674416477516" />
+        <classShapeMoniker Id="952ffc98-3aa0-4607-a03a-7d53019f8287" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.27089680989583); (3.125 : 5.64589680989583); (3.125 : 7.41429768880208); (3.5 : 7.41429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Bluda/Bluda_Sostav" />
+      <nodes>
+        <classShapeMoniker Id="89b46395-8758-40c2-b382-32a872e6aa8e" />
+        <classShapeMoniker Id="45dc4e1b-b6e6-4926-9f6d-926791b2f6f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 16.4719962565104); (4.65625 : 16.4719962565104); (4.65625 : 8.20359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Prodykt/Prodykt_Sostav" />
+      <nodes>
+        <classShapeMoniker Id="60cc41f2-92a0-42a5-8504-e0c5825a20f7" />
+        <classShapeMoniker Id="45dc4e1b-b6e6-4926-9f6d-926791b2f6f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.68814281510417); (3.06607443490112 : 6.37206838020305 : JumpStart); (3.18392556509888 : 6.25421725000529 : JumpEnd); (3.3125 : 6.12564281510417); (3.3125 : 4.82097245898438); (3.5 : 4.82097245898438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Zacaz/Zacaz_Zacaz_bluda" />
+      <nodes>
+        <classShapeMoniker Id="e304e7b0-fe87-4a3d-b677-16bbdbc63c02" />
+        <classShapeMoniker Id="933b05c6-187d-4796-81cf-786462b101f6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 9.125); (2.125 : 8.20359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RestoranDataContext/Klient/Klient_Zacaz" />
+      <nodes>
+        <classShapeMoniker Id="952ffc98-3aa0-4607-a03a-7d53019f8287" />
+        <classShapeMoniker Id="e304e7b0-fe87-4a3d-b677-16bbdbc63c02" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
